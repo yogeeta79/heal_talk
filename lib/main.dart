@@ -6,6 +6,7 @@ import 'package:heal_talk/homescreen.dart';
 import 'package:heal_talk/loginscreen.dart';
 import 'package:heal_talk/registerscreen.dart';
 import 'package:heal_talk/firebase_options.dart';
+import 'package:provider/provider.dart';
 import 'package:heal_talk/firebase_service.dart';
 import 'package:heal_talk/meditation_screen.dart';
 import 'package:heal_talk/journal_screen.dart';
@@ -18,8 +19,15 @@ void main()async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(HealTalkApp());
-    
+  runApp(
+    MultiProvider(
+      providers: [
+        Provider<FirebaseService>(create: (_) => FirebaseService()),
+      ],
+      child: HealTalkApp(),
+    ),
+  );
+}
 
 
 class HealTalkApp extends StatelessWidget {

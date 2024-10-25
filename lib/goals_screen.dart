@@ -9,6 +9,7 @@ class GoalsScreen extends StatefulWidget {
 class _GoalsScreenState extends State<GoalsScreen> {
   List<Map<String, dynamic>> goals = [];
   final PreferencesHelper _preferencesHelper = PreferencesHelper(); 
+  
   @override
   void initState() {
     super.initState();
@@ -31,10 +32,18 @@ class _GoalsScreenState extends State<GoalsScreen> {
       goals[index]['progress'] = progress;
     });
     _saveGoals(); 
+  }
 
   void addGoal(String title) {
     setState(() {
       goals.add({'title': title, 'progress': 0.0});
+    });
+    _saveGoals(); 
+  }
+
+  void deleteGoal(int index) {
+    setState(() {
+      goals.removeAt(index);
     });
     _saveGoals(); 
   }
@@ -94,13 +103,24 @@ class _GoalsScreenState extends State<GoalsScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      goal['title'],
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.teal.shade800,
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          goal['title'],
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.teal.shade800,
+                          ),
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.delete, color: Colors.red),
+                          onPressed: () {
+                            deleteGoal(index);
+                          },
+                        ),
+                      ],
                     ),
                     SizedBox(height: 8),
                     LinearProgressIndicator(

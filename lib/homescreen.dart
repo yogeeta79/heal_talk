@@ -7,19 +7,21 @@ import 'profile_screen.dart';
 import 'package:heal_talk/build_confidence.dart'; 
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
         elevation: 0,
-        title: Text(
+        title: const Text(
           'HealTalk',
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.account_circle, size: 28),
+            icon: const Icon(Icons.account_circle, size: 28),
             onPressed: () {
               Navigator.push(
                 context,
@@ -43,12 +45,12 @@ class HomeScreen extends StatelessWidget {
                   color: Colors.teal.shade800,
                 ),
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 'How are you feeling today?',
                 style: TextStyle(fontSize: 18, color: Colors.black87),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // Build Confidence Section
               GestureDetector(
@@ -59,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                   );
                 },
                 child: Container(
-                  padding: EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [Colors.teal.shade100, Colors.teal.shade50],
@@ -79,8 +81,8 @@ class HomeScreen extends StatelessWidget {
                           color: Colors.teal.shade800,
                         ),
                       ),
-                      SizedBox(height: 8),
-                      Text(
+                      const SizedBox(height: 8),
+                      const Text(
                         'Tap here for motivational insights',
                         style: TextStyle(fontSize: 16, color: Colors.black54),
                       ),
@@ -89,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
            
               GridView.count(
@@ -97,7 +99,7 @@ class HomeScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 children: [
                   _buildFeatureContainer(
                     context,
@@ -172,7 +174,7 @@ class HomeScreen extends StatelessWidget {
               color: Colors.grey.withOpacity(0.2),
               spreadRadius: 2,
               blurRadius: 5,
-              offset: Offset(0, 3), 
+              offset: const Offset(0, 3), 
             ),
           ],
         ),
@@ -181,7 +183,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             Expanded(
               child: ClipRRect(
-                borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
+                borderRadius: const BorderRadius.vertical(top: Radius.circular(15)),
                 child: Image.asset(
                   imageUrl, 
                   fit: BoxFit.contain
@@ -202,11 +204,11 @@ class HomeScreen extends StatelessWidget {
                       color: Colors.teal.shade800,
                     ),
                   ),
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
                   Text(
                     description,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       color: Colors.black54,
                     ),

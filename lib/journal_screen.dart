@@ -4,6 +4,8 @@ import 'dart:convert';
 import 'dart:math';
 
 class JournalScreen extends StatefulWidget {
+  const JournalScreen({super.key});
+
   @override
   _JournalScreenState createState() => _JournalScreenState();
 }
@@ -68,7 +70,7 @@ class _JournalScreenState extends State<JournalScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: Text('Journal'),
+        title: const Text('Journal'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -83,7 +85,7 @@ class _JournalScreenState extends State<JournalScreen> {
                 color: Colors.teal.shade800,
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             TextField(
               controller: _entryController,
               maxLines: 4,
@@ -92,20 +94,20 @@ class _JournalScreenState extends State<JournalScreen> {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
-                focusedBorder: OutlineInputBorder(
+                focusedBorder: const OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.teal),
                 ),
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: _addEntry,
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.teal,
               ),
-              child: Text('Save Entry'),
+              child: const Text('Save Entry', style: TextStyle(color:Colors.white),)
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
                 itemCount: entries.length,
@@ -118,13 +120,13 @@ class _JournalScreenState extends State<JournalScreen> {
                     child: ListTile(
                       title: Text(
                         'Entry ${index + 1}',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(entries[index]['text'] ?? ''),
-                          SizedBox(height: 4), 
+                          const SizedBox(height: 4), 
                           Align(
                             alignment: Alignment.centerRight,
                             child: Text(

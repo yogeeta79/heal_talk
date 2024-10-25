@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
+
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
 }
@@ -24,17 +26,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Edit Profile'),
+          title: const Text('Edit Profile'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
                 controller: _nameController,
-                decoration: InputDecoration(labelText: 'Name'),
+                decoration: const InputDecoration(labelText: 'Name'),
               ),
               TextField(
                 controller: _emailController,
-                decoration: InputDecoration(labelText: 'Email'),
+                decoration: const InputDecoration(labelText: 'Email'),
               ),
             ],
           ),
@@ -47,7 +49,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 });
                 Navigator.of(context).pop();
               },
-              child: Text('Save'),
+              child: const Text('Save'),
             ),
           ],
         );
@@ -60,10 +62,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: Text('Profile'),
+        title: const Text('Profile'),
         actions: [
           IconButton(
-            icon: Icon(Icons.logout),
+            icon: const Icon(Icons.logout),
             onPressed: () {
           
             },
@@ -81,7 +83,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 radius: 60,
                 child: Image.asset("assets/images/profile.png")
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Text(
                 name,
                 style: TextStyle(
@@ -90,7 +92,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   color: Colors.teal.shade800,
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
                 email,
                 style: TextStyle(
@@ -98,18 +100,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   color: Colors.grey.shade700,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton.icon(
                 onPressed: _editProfile,
-                icon: Icon(Icons.edit),
-                label: Text('Edit Profile',style: TextStyle(color: 
+                icon: const Icon(Icons.edit),
+                label: const Text('Edit Profile',style: TextStyle(color: 
                 Colors.white),),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.teal,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 ),
               ),
             ],

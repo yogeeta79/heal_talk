@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class MeditationScreen extends StatefulWidget {
+  const MeditationScreen({super.key});
+
   @override
   _MeditationScreenState createState() => _MeditationScreenState();
 }
@@ -39,7 +41,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
       sessions[index]['isRunning'] = true;
       currentSessionIndex = index;
     });
-    timer = Timer.periodic(Duration(seconds: 1), (_) {
+    timer = Timer.periodic(const Duration(seconds: 1), (_) {
       setState(() {
         sessions[index]['elapsedSeconds']++;
       });
@@ -81,7 +83,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: Text('Meditation'),
+        title: const Text('Meditation'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -97,7 +99,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
+                    borderRadius: const BorderRadius.vertical(top: Radius.circular(15)),
                     child: Image.asset(
                       sessions[index]['image'],
                       height: 150,
@@ -118,7 +120,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
                             color: Colors.teal.shade800,
                           ),
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Text(
                           sessions[index]['tip'],
                           style: TextStyle(
@@ -126,7 +128,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
                             color: Colors.teal.shade600,
                           ),
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         Text(
                           'Elapsed Time: ${getElapsedTime(index)}',
                           style: TextStyle(
@@ -134,7 +136,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
                             color: Colors.teal.shade800,
                           ),
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
@@ -142,8 +144,8 @@ class _MeditationScreenState extends State<MeditationScreen> {
                               onPressed: sessions[index]['isRunning']
                                   ? null
                                   : () => startTimer(index),
-                              icon: Icon(Icons.play_circle_fill),
-                              label: Text('Start'),
+                              icon: const Icon(Icons.play_circle_fill),
+                              label: const Text('Start',style: TextStyle(color:Colors.white),),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.teal,
                                 shape: RoundedRectangleBorder(
@@ -151,13 +153,13 @@ class _MeditationScreenState extends State<MeditationScreen> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 10),
+                            const SizedBox(width: 10),
                             ElevatedButton.icon(
                               onPressed: sessions[index]['isRunning']
                                   ? () => stopTimer(index)
                                   : null,
-                              icon: Icon(Icons.stop_circle),
-                              label: Text('Stop'),
+                              icon: const Icon(Icons.stop_circle),
+                              label: const Text('Stop'),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.redAccent,
                                 shape: RoundedRectangleBorder(
@@ -165,14 +167,14 @@ class _MeditationScreenState extends State<MeditationScreen> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 10),
+                            const SizedBox(width: 10),
                             ElevatedButton.icon(
                               onPressed: !sessions[index]['isRunning'] &&
                                       sessions[index]['elapsedSeconds'] > 0
                                   ? () => resetTimer(index)
                                   : null,
-                              icon: Icon(Icons.replay),
-                              label: Text('Reset'),
+                              icon: const Icon(Icons.replay),
+                              label: const Text('Reset'),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.grey,
                                 shape: RoundedRectangleBorder(

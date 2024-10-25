@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MoodTrackingScreen extends StatefulWidget {
+  const MoodTrackingScreen({super.key});
+
   @override
   _MoodTrackingScreenState createState() => _MoodTrackingScreenState();
 }
@@ -37,7 +39,7 @@ class _MoodTrackingScreenState extends State<MoodTrackingScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: Text('Mood Tracker'),
+        title: const Text('Mood Tracker'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -52,7 +54,7 @@ class _MoodTrackingScreenState extends State<MoodTrackingScreen> {
                 color: Colors.teal.shade800,
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Wrap(
               spacing: 10,
               children: moods.map((mood) {
@@ -60,12 +62,12 @@ class _MoodTrackingScreenState extends State<MoodTrackingScreen> {
                   onTap: () => logMood(mood),
                   child: Text(
                     mood,
-                    style: TextStyle(fontSize: 32),
+                    style: const TextStyle(fontSize: 32),
                   ),
                 );
               }).toList(),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             if (currentMood != null)
               Card(
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
@@ -83,10 +85,10 @@ class _MoodTrackingScreenState extends State<MoodTrackingScreen> {
                           color: Colors.teal.shade800,
                         ),
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Text(
                         getMoodMessage(currentMood!),
-                        style: TextStyle(fontSize: 16),
+                        style: const TextStyle(fontSize: 16),
                       ),
                     ],
                   ),

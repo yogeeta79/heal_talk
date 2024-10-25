@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 class BuildConfidenceScreen extends StatefulWidget {
+  const BuildConfidenceScreen({super.key});
+
   @override
   _BuildConfidenceScreenState createState() => _BuildConfidenceScreenState();
 }
@@ -32,28 +34,28 @@ class _BuildConfidenceScreenState extends State<BuildConfidenceScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Build Confidence"),
+        title: const Text("Build Confidence"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "Build Confidence",
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Image.asset(
               "assets/images/bd.png",
               height: 200,
               fit: BoxFit.cover,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               currentParagraph,
-              style: TextStyle(fontSize: 20, fontStyle: FontStyle.italic),
+              style: const TextStyle(fontSize: 20, fontStyle: FontStyle.italic),
               textAlign: TextAlign.center,
             ),
           ],
@@ -65,7 +67,7 @@ class _BuildConfidenceScreenState extends State<BuildConfidenceScreen> {
             currentParagraph = _getRandomParagraph();
           });
         },
-        child: Icon(Icons.refresh),
+        child: const Icon(Icons.refresh),
       ),
     );
   }

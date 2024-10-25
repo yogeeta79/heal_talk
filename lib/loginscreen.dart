@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -34,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Login to HealTalk',
                 style: TextStyle(
                   fontSize: 24,
@@ -42,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: Colors.teal,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               TextField(
                 controller: _emailController,
                 decoration: InputDecoration(
@@ -52,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextField(
                 controller: _passwordController,
                 decoration: InputDecoration(
@@ -63,24 +65,24 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 obscureText: false,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _login,
-                child: Text('Login',style: TextStyle(color: 
-                Colors.white),),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.teal,
-                  padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+                  padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
+                child: Text('Login',style: TextStyle(color: 
+                Colors.white),),
               ),
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/register');
                 },
-                child: Text('Don\'t have an account? Register'),
+                child: const Text('Don\'t have an account? Register'),
               ),
             ],
           ),

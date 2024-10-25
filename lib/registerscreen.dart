@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
+
   @override
   _RegisterScreenState createState() => _RegisterScreenState();
 }
@@ -34,7 +36,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Register for HealTalk',
                 style: TextStyle(
                   fontSize: 24,
@@ -42,7 +44,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   color: Colors.teal,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               TextField(
                 controller: _emailController,
                 decoration: InputDecoration(
@@ -52,7 +54,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextField(
                 controller: _passwordController,
                 decoration: InputDecoration(
@@ -63,23 +65,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 obscureText: true,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _register,
-                child: Text('Register',style: TextStyle(color: Colors.white),),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.teal,
-                  padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+                  padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
+                child: Text('Register',style: TextStyle(color: Colors.white),),
               ),
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text('Already have an account? Login'),
+                child: const Text('Already have an account? Login'),
               ),
             ],
           ),
