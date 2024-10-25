@@ -8,7 +8,6 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   String name = 'John Doe';
   String email = 'johndoe@example.com';
-  String profilePicUrl = 'https://via.placeholder.com/150'; // Placeholder image URL
 
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
@@ -66,21 +65,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
           IconButton(
             icon: Icon(Icons.logout),
             onPressed: () {
-              // Implement logout functionality
+          
             },
           ),
         ],
       ),
-      body: Center( // Center the content
+      body: Center( 
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center, // Center vertically
+            mainAxisAlignment: MainAxisAlignment.center, 
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CircleAvatar(
                 radius: 60,
-                backgroundImage: NetworkImage(profilePicUrl),
+                child: Image.asset("assets/images/profile.png")
               ),
               SizedBox(height: 16),
               Text(
@@ -103,7 +102,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ElevatedButton.icon(
                 onPressed: _editProfile,
                 icon: Icon(Icons.edit),
-                label: Text('Edit Profile'),
+                label: Text('Edit Profile',style: TextStyle(color: 
+                Colors.white),),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.teal,
                   shape: RoundedRectangleBorder(

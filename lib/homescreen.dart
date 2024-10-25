@@ -4,7 +4,7 @@ import 'journal_screen.dart';
 import 'meditation_screen.dart';
 import 'mood_tracking_screen.dart';
 import 'profile_screen.dart';
-import 'package:heal_talk/build_confidence.dart'; // Import the BuildConfidenceScreen
+import 'package:heal_talk/build_confidence.dart'; 
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 18, color: Colors.black87),
               ),
               SizedBox(height: 20),
-              
+
               // Build Confidence Section
               GestureDetector(
                 onTap: () {
@@ -91,7 +91,7 @@ class HomeScreen extends StatelessWidget {
 
               SizedBox(height: 20),
 
-              // Features Section
+           
               GridView.count(
                 shrinkWrap: true,
                 crossAxisCount: 2,
@@ -102,8 +102,7 @@ class HomeScreen extends StatelessWidget {
                   _buildFeatureContainer(
                     context,
                     title: 'Goals',
-                    imageUrl:
-                        'https://images.unsplash.com/photo-1580631365999-95f0ef2908ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60',
+                    imageUrl: "assets/images/11234019.png", // Use asset path
                     description: 'Track your progress',
                     onTap: () {
                       Navigator.push(
@@ -115,8 +114,7 @@ class HomeScreen extends StatelessWidget {
                   _buildFeatureContainer(
                     context,
                     title: 'Journal',
-                    imageUrl:
-                        'https://images.unsplash.com/photo-1501529307352-5922e4023a29?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60',
+                    imageUrl: "assets/images/8849924.png", // Use asset path
                     description: 'Reflect on your thoughts',
                     onTap: () {
                       Navigator.push(
@@ -128,8 +126,7 @@ class HomeScreen extends StatelessWidget {
                   _buildFeatureContainer(
                     context,
                     title: 'Meditation',
-                    imageUrl:
-                        'https://images.unsplash.com/photo-1552089124-241a52f5e55b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60',
+                    imageUrl: 'assets/images/mediatation.png', // Use asset path
                     description: 'Find your calm',
                     onTap: () {
                       Navigator.push(
@@ -141,14 +138,12 @@ class HomeScreen extends StatelessWidget {
                   _buildFeatureContainer(
                     context,
                     title: 'Mood Tracker',
-                    imageUrl:
-                        'https://images.unsplash.com/photo-1494883759339-0b042055a4ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60',
+                    imageUrl: 'assets/images/Moodtracker.png', // Use asset path
                     description: 'Track your emotions',
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => MoodTrackingScreen()),
+                        MaterialPageRoute(builder: (context) => MoodTrackingScreen()),
                       );
                     },
                   ),
@@ -177,7 +172,7 @@ class HomeScreen extends StatelessWidget {
               color: Colors.grey.withOpacity(0.2),
               spreadRadius: 2,
               blurRadius: 5,
-              offset: Offset(0, 3), // changes position of shadow
+              offset: Offset(0, 3), 
             ),
           ],
         ),
@@ -187,9 +182,10 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: ClipRRect(
                 borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
-                child: Image.network(
-                  imageUrl,
-                  fit: BoxFit.cover,
+                child: Image.asset(
+                  imageUrl, 
+                  fit: BoxFit.contain
+                  ,
                 ),
               ),
             ),

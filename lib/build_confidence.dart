@@ -20,7 +20,6 @@ class _BuildConfidenceScreenState extends State<BuildConfidenceScreen> {
   @override
   void initState() {
     super.initState();
-    // Select a random paragraph when the screen initializes
     currentParagraph = _getRandomParagraph();
   }
 
@@ -46,9 +45,8 @@ class _BuildConfidenceScreenState extends State<BuildConfidenceScreen> {
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 20),
-            // Placeholder for the illustration
-            Image.network(
-              "https://example.com/illustration.png", // Replace with actual illustration URL
+            Image.asset(
+              "assets/images/bd.png",
               height: 200,
               fit: BoxFit.cover,
             ),
@@ -63,7 +61,6 @@ class _BuildConfidenceScreenState extends State<BuildConfidenceScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Update paragraph when button is pressed
           setState(() {
             currentParagraph = _getRandomParagraph();
           });

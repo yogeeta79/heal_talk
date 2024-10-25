@@ -39,7 +39,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.purple,
+                  color: Colors.teal,
                 ),
               ),
               SizedBox(height: 20),
@@ -66,9 +66,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _register,
-                child: Text('Register'),
+                child: Text('Register',style: TextStyle(color: Colors.white),),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.purple,
+                  backgroundColor: Colors.teal,
                   padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),

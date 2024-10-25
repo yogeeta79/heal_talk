@@ -13,7 +13,7 @@ class _JournalScreenState extends State<JournalScreen> {
   List<Map<String, String>> entries = []; // To store entries with date
   String _currentPrompt = ''; // To store the current prompt
 
-  // List of prompts
+  
   final List<String> _prompts = [
     'What made you smile today?',
     'Describe a moment you felt proud of yourself.',
@@ -26,7 +26,7 @@ class _JournalScreenState extends State<JournalScreen> {
   void initState() {
     super.initState();
     _loadEntries();
-    _setRandomPrompt(); // Set a random prompt when screen initializes
+    _setRandomPrompt(); 
   }
 
   Future<void> _loadEntries() async {
@@ -45,7 +45,6 @@ class _JournalScreenState extends State<JournalScreen> {
   }
 
   void _setRandomPrompt() {
-    // Select a random prompt from the list
     setState(() {
       _currentPrompt = _prompts[Random().nextInt(_prompts.length)];
     });
@@ -125,7 +124,7 @@ class _JournalScreenState extends State<JournalScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(entries[index]['text'] ?? ''),
-                          SizedBox(height: 4), // Spacing between text and date
+                          SizedBox(height: 4), 
                           Align(
                             alignment: Alignment.centerRight,
                             child: Text(

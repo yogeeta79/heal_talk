@@ -10,21 +10,21 @@ class _MeditationScreenState extends State<MeditationScreen> {
   final List<Map<String, dynamic>> sessions = [
     {
       'title': 'Quick Stress Relief - 5 minutes',
-      'image': 'assets/images/stress_relief.jpg',
+      'image': 'assets/images/first.png',
       'tip': 'Take a deep breath and let your thoughts float away like clouds in the sky.',
       'isRunning': false,
       'elapsedSeconds': 0,
     },
     {
       'title': 'Morning Focus - 10 minutes',
-      'image': 'assets/images/morning_focus.jpg',
+      'image': 'assets/images/second.png',
       'tip': 'Visualize a positive outcome for the day ahead while breathing deeply.',
       'isRunning': false,
       'elapsedSeconds': 0,
     },
     {
       'title': 'Sleep Aid - 15 minutes',
-      'image': 'assets/images/sleep_aid.jpg',
+      'image': 'assets/images/third.png',
       'tip': 'Focus on the sound of your breath, letting each exhale release any tension.',
       'isRunning': false,
       'elapsedSeconds': 0,

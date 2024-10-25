@@ -39,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.purple,
+                  color: Colors.teal,
                 ),
               ),
               SizedBox(height: 20),
@@ -66,9 +66,10 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _login,
-                child: Text('Login'),
+                child: Text('Login',style: TextStyle(color: 
+                Colors.white),),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.purple,
+                  backgroundColor: Colors.teal,
                   padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
